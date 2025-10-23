@@ -1,0 +1,258 @@
+@media screen and (max-width:1443px) {
+    .home-section .home-content .home-name h1{
+        font-size: 3.2rem;
+    }
+    .home-section .home-content .home-name h1 .animated-name{
+        font-size: 3.2rem;
+    }
+    .home-content .role h1{
+        font-size: 1.9rem;
+    }
+}
+@media screen and (max-width:1280px) {
+    .home-section .home-content .home-name h1{
+        font-size: 3rem;
+    }
+    .home-section .home-content .home-name h1 .animated-name{
+        font-size: 3rem;
+    }
+    .home-content .role h1{
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (max-width:1072px) {
+    .home-section .home-content .home-name h1{
+        font-size: 2.9rem;
+    }
+    .home-section .home-content .home-name h1 .animated-name{
+        font-size: 2.9rem;
+    }
+    .home-content .role h1{
+        font-size: 1.8rem;
+    }
+    .home-image .image{
+        width: 25rem;
+        height: 25rem;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media screen and (max-width:1025px) {
+    .home-section .home-content .home-name h1{
+        font-size: 2.8rem;
+    }
+    .home-section .home-content .home-name h1 .animated-name{
+        font-size: 2.8rem;
+    }
+    .home-content .role h1{
+        font-size: 1.8rem;
+    }
+    .about-heading h1,.education-heading h1 ,.skills-heading h1 ,.experience-heading h1 ,.project-heading h1 , .contact-heading h1{
+        font-size: 2.7rem;
+    }
+}
+@media screen and (max-width:980px) {
+    .home-section .home-content .home-name h1{
+        font-size: 2.6rem;
+    }
+    .home-section .home-content .home-name h1 .animated-name{
+        font-size: 2.6rem;
+    }
+    .home-content .role h1{
+        font-size: 1.8rem;
+    }
+    .home-content .content p{
+        font-size: 1rem;
+    }
+    .home-image{
+        padding: 2rem 0;
+    }
+     .home-image .image{
+        width: 22rem;
+        height: 22rem;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .home-image{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .home-content{
+        text-align: center;
+        width: 100%;
+        padding: 2rem 0;
+    }
+    .home-content .cv-button-tags{
+        display: block;
+    }
+    .home-content .cv-button-tags .link-tags{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2rem;
+    }
+    .education-rows .education-box .education-content .content .degree{
+        font-size: 1.3rem;
+    }
+    .education-rows .education-box .education-content .content .college-name{
+        font-size: 1rem;
+    }
+    .education-rows .education-box .education-content .content .year{
+        font-size: .9rem;
+    }
+    .skills-content .skills-progress h3{
+        font-size: 1.2rem;
+    }
+    .skills-content .skills-progress .bar{
+        height: 2rem;
+        padding: .5rem;
+        margin: 1rem 0;
+    }
+    .all-projects .project-row .project-col .images{
+        height: 200px;
+    }
+}
+
+@media  (max-width: 816px) {
+    .menus-toggle{
+        display: block;
+    }
+    .navbar-items{
+        display: none;
+    }
+    .home-section{
+        display: block;
+    }
+    .about-heading h1,.education-heading h1 ,.skills-heading h1 ,.experience-heading h1 ,.project-heading h1 , .contact-heading h1{
+        font-size: 2.5rem;
+    }
+    .about-section .about-contect h1{
+    font-size: 2rem;
+    }
+    .about-section .about-contect p{
+        font-size: 1rem;
+    }
+    
+}
+
+
+@media screen and (max-width:450px) {
+    .home-section .home-content .home-name h1{
+        font-size: 1.7rem;
+    }
+    .home-section .home-content .home-name h1 .animated-name{
+        font-size: 1.2em;
+    }
+    .home-content .role h1{
+        font-size: 1.8rem;
+    }
+    .home-content .content p{
+        font-size: 1rem;
+    }
+    .home-image{
+        padding: 2rem 0;
+    }
+     .home-image .image{
+        width: 15rem;
+        height: 15rem;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .home-image{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .home-content{
+        text-align: center;
+        width: 100%;
+        padding: 2rem 0;
+    }
+    .home-content .cv-button-tags{
+        display: block;
+    }
+    .home-content .cv-button-tags .link-tags{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2rem;
+    }
+    .about-image{
+        height: 15rem;
+        width: 15rem;
+    }
+    .about-section .about-contect p{
+        margin: 0rem;
+    }
+    .education-rows .education-box .education-content .content .degree{
+        font-size: 1.3rem;
+    }
+    .education-rows .education-box .education-content .content .college-name{
+        font-size: 1rem;
+    }
+    .education-rows .education-box .education-content .content .year{
+        font-size: .9rem;
+    }
+    .skills-section .skills-row{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .skills-row .skills-column{
+        flex: 0;
+    }
+    .form-input form .input-box{
+        display: block;
+        flex-wrap: wrap;
+    }
+    .form-input form .input-box .input-field{
+        width: 100%;
+    }
+    .carousel {
+      width: 70%;
+      height: 200px;
+    }
+    /* .skills-content .skills-progress h3{
+        font-size: 1rem;
+    }
+    .skills-box .skills-content{
+        padding: .6rem;
+    }
+    .skills-content .skills-progress .bar{
+        height: 1rem;
+        padding: .1rem;
+        margin: 1rem 0;
+    }
+    .skills-section .skills-row{
+        display: flex;
+        gap: 1rem;
+    }
+    .all-projects .project-row .project-col .images{
+        height: 200px;
+    } */
+}
+
+
+/* Breakpoints */
+@media  (max-width: 1200px) {
+    html{
+        font-size: 90%;
+    }
+    
+}
+@media  (max-width: 991px) {
+    .navbar-section .navbar{
+        padding: 2rem 4%;
+    }
+}
+

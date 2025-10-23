@@ -1,0 +1,984 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kumar+One+Outline&family=Manufacturing+Consent&family=Michroma&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background: #1f242d;
+    color: white;
+}
+section{
+    min-height: 100vh;
+    padding: 5rem 9% 2rem;
+}
+
+/* Home */
+.navbar-section{
+    background: transparent;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    transition: all 0.3s;
+}
+.navbar-section.sticky{
+    background: slateblue;
+}
+.navbar-section .navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.56rem 3%;
+}
+.name-heading{
+    position: relative;
+}
+.name-heading h1{
+    font-size: 1.56rem;
+    font-weight: 700;
+    font-family: 'Poppins',sans-serif;
+    margin: 0;
+}
+/* Default hidden state for all .animate elements */
+.animate {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #1f242d;
+    z-index: 98;
+}
+/* section:nth-child(even) .animate {
+    background: #1f242d;
+}
+section:nth-child(odd) .animate {
+    background: rgba(105, 90, 205, 0.284);
+} */
+/* .animation{
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s ease;
+}
+.show-animate .animation {
+    animation: shows 1s ease forwards;
+    animation-delay: calc(0.3s * var(--i));
+}
+@keyframes shows {
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+} */
+
+/* Keep your animation class names but make small improvements */
+.animation{
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
+}
+
+/* When the section receives show-animate, animate its .animation children */
+.show-animate .animation {
+  animation: shows 0.85s ease forwards;
+  animation-delay: calc(0.18s * var(--i)); /* smaller delay for snappier feel */
+}
+
+@keyframes shows {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Only animate when section is visible */
+/* .show-animate .animate {
+    animation: showRight 1s ease forwards;
+    animation-delay: calc(0.3s * var(--i));
+} */
+.navbar-items .animate , .name-heading .animate{
+    animation: showRight 1s ease forwards;
+    animation-delay: calc(0.3s * var(--i));
+}
+/* .animate.scroll{
+    transition: 1s ease;
+    transition-delay: calc(0.3s * var(--i));
+} */
+@keyframes showRight {
+    100%{
+        width: 0;
+    }
+}
+.navbar-items{
+    position: relative;
+}
+.navbar-items .nav-list{
+    display: flex;
+    column-gap: 1.875rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    align-items: center;
+    align-content: center;
+}
+.navbar-items .nav-list .nav-items .nav-link{
+    text-decoration: none;
+    color: white;
+    font-size: 1.06rem;
+    font-weight: 500;
+}
+.navbar-items .nav-list .nav-items .active{
+    text-decoration: none;
+    color: white;
+    font-size: 1.06rem;
+    font-weight: 500;
+    border-bottom: 2px solid white;
+}
+.menus-toggle{
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+.menus-toggle .bars{
+    display: block;
+    width: 1.5rem;
+    height: 0.1rem;
+    margin: 0.3rem auto;
+    background-color: white;
+    border-radius: 0.6rem;
+    transition: all 0.3s ease-in-out;
+}
+.offcanvas{
+    background-color: slateblue;
+    height: 28.12rem;
+    width: 200px !important;
+}
+.offcanvas .offcanvas-header{
+    display: flex;
+    justify-content: space-between;
+}
+.offcanvas .offcanvas-header .offcanvas-title{
+    color: white;
+}
+.offcanvas .close-button{
+    color: white !important;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+.offcanvas .nav-list{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    align-items: center;
+    align-content: center;
+}
+.offcanvas .nav-list .nav-items .nav-link{
+    text-decoration: none;
+    color: white;
+    font-size: 1.06rem;
+    font-weight: 500;
+    padding: 0.6rem;
+}
+.home-section{
+    display: flex;
+    align-items: center;
+    height: auto;
+    position: relative;
+}
+.home-image{
+    width: 50%;
+    display: flex;
+    justify-content: start;
+    position: relative;
+}
+.home-image .image{
+    width: 28.1rem;
+    height: 28.1rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home-image .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 50%;
+    background: #1f242d;
+}
+@property --deg{
+    syntax: '<angle>';
+    inherits: true;
+    initial-value: 0deg;
+}
+.home-image .image::before, .home-image .image::after{
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.2rem;
+    z-index: -2;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    background: conic-gradient(
+        from var(--deg) at center,
+        slateblue,transparent,transparent,slateblue,transparent,transparent,slateblue
+    );
+    animation: rotation 8s linear infinite;
+}
+.home-image .image::after{
+    filter: blur(20px);
+}
+@keyframes rotation {
+    to{
+        --deg:360deg;
+    }
+}
+.home-content{
+    width: 50%;
+}
+.home-content .home-name{
+    position: relative;
+}
+.home-content .home-name h1{
+    margin: 0;
+    display: inline-block;
+    font-size: 3.4rem;
+    font-weight: 600;
+    text-wrap: nowrap;
+}
+.home-content .home-name h1 .animated-name{
+    font-size: 3.7rem;
+    font-weight: 700;
+    color: slateblue;
+}
+.home-content .role{
+    position: relative;
+}
+.home-content .role h1{
+    margin: 0;
+    font-size: 2rem;
+}
+.home-content .role h1 .animated-text{
+    -webkit-text-stroke: 0.7px slateblue;
+    color: transparent;
+}
+.home-content .content{
+    position: relative;
+}
+.home-content .content p{
+    font-size: 1rem;
+    margin: 0.6rem 0rem 1.5rem;
+}
+.home-content .cv-button-tags{
+    display: flex;
+    column-gap: 30px;
+}
+.home-content .cv-button-tags .cv-button{
+    position: relative;
+}
+.home-content .cv-button-tags .cv-button button{
+    padding: 0.6rem 1.8rem;
+    border-radius: 30px;
+    border: 0px;
+    background: slateblue;
+    box-shadow: 0px 0px 10px slateblue;
+    color: white;
+    font-size: 1.06rem;
+    font-weight: 600;
+    transition: all 0.5s ease;
+    position: relative;
+}
+.home-content .cv-button-tags .cv-button button:hover{
+    background: transparent;
+    color: white;
+}
+.home-content .cv-button-tags .link-tags{
+    position: relative;
+    align-items: center;
+    align-content: center;
+}
+.home-content .cv-button-tags .link-tags ul{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    column-gap: 0.6rem;
+    list-style: none;
+    align-items: center;
+}
+.home-content .cv-button-tags .link-tags ul li{
+    padding: 0.3rem 0.6rem;
+    border: 0.06rem solid slateblue;
+    border-radius: 50%;
+    align-items: center;
+    align-content: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.7s ease;
+
+}
+.home-content .cv-button-tags .link-tags ul li a{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: white;
+    position: relative;
+}
+.home-content .cv-button-tags .link-tags ul li .circle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    z-index: -1;
+    transform: translate(-50%,-50%);
+    background-color: slateblue;
+    height: 0%;
+    width: 0%;
+    transition: all 0.5s ease;
+}
+.home-content .cv-button-tags .link-tags ul li:hover{
+    box-shadow: 0px 0px 10px slateblue;
+}
+.home-content .cv-button-tags .link-tags ul li:hover .circle{
+    height: 105%;
+    width: 105%;
+}
+
+/* About */
+/* 
+.animate.scroll{
+    transition: 1s ease;
+    transition-delay: calc(0.3s / var(--i));
+    animation: none;
+}
+.about-section.show-animate .animate.scroll ,.skills-section.show-animate .animate.scroll, .education-section.show-animate .animate.scroll, .experience-section.show-animate .animate.scroll, .project-section.show-animate .animate.scroll, .contact-section.show-animate .animate.scroll{
+    transition-delay: calc(.3s * var(--i));
+    width: 0;
+} */
+
+.about-section{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    background: rgba(105, 90, 205, 0.284);
+}
+.about-heading h1{
+    font-size: 4rem;
+    text-align: center;
+    font-weight: 600;
+    position: relative;
+}
+.about-heading h1 span{
+    color: slateblue;
+}
+.about-image{
+    position: relative;
+    height: 20rem;
+    width: 20rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about-image img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    border: 0.2rem solid slateblue;
+}
+.about-image .circle-spin{
+    position: absolute;
+    height: 110%;
+    width: 110%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(0);
+    border-radius: 50%;
+    border-left: 0.2rem solid slateblue;
+    border-right: 0.2rem solid slateblue;
+    border-top: 0.2rem solid transparent;
+    border-bottom: 0.2rem solid transparent;
+    animation: spin 4s linear infinite;
+}
+@keyframes spin {
+    to{
+        transform: translate(-50%,-50%) rotate(360deg);
+    }
+}
+.about-section .about-contect{
+    text-align: center;
+    margin: 1rem;
+}
+.about-section .about-contect h1{
+    position: relative;
+    font-size: 2.3rem;
+}
+.about-section .about-contect p{
+    position: relative;
+    font-size: 1.1rem;
+    margin: 2rem 2rem 0.5rem;
+}
+.about-section .download-cv-button{
+    position: relative;
+}
+.about-section .download-cv-button button{
+    padding: 0.6rem 1.8rem;
+    border-radius: 30px;
+    border: 0px;
+    background: slateblue;
+    box-shadow: 0px 0px 10px slateblue;
+    color: white;
+    font-size: 1.06rem;
+    font-weight: 600;
+    transition: all 0.5s ease;
+}
+.about-section .download-cv-button button:hover{
+    background: transparent;
+    color: white;
+}
+
+/* Education */
+.education-section{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+.education-heading{
+    position: relative;
+}
+.education-heading h1{
+    font-size: 4rem;
+    text-align: center;
+    font-weight: 600;
+}
+.education-heading h1 span{
+    color: slateblue;
+}
+.education-rows .education-box{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-left: 0.2rem solid slateblue;
+    padding-left: 2rem;
+}
+.education-rows .education-box .education-content{
+    border: 0.1rem solid slateblue;
+    padding: 2%;
+    border-radius: 1.3rem;
+    position: relative;
+    display: flex;
+    cursor: pointer;
+}
+.education-rows .education-box .education-content .overlay{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 1.3rem;
+    height: 100%;
+    width: 0;
+    opacity: 0.3;
+    background-color: slateblue;
+    transition: all .6s;
+    z-index: -1;
+}
+.education-rows .education-box .education-content:hover .overlay{
+    width: 100%;
+    left: 0;
+    right: unset;
+}
+.education-rows .education-box .education-content::before, .education-rows .education-box .education-content::after{
+    position: absolute;
+    top: -0.1rem;
+    left: -3.2rem;
+    content: "";
+    height: 2rem;
+    width: 2rem;
+    background: slateblue;
+    border-radius: 50%;
+}
+.education-rows .education-box .education-content::after{
+    box-shadow: 0 0 1.5rem slateblue;
+}
+.education-rows .education-box .education-content .content .degree{
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+}
+.education-rows .education-box .education-content .content .college-name{
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: slateblue;
+}
+.education-rows .education-box .education-content .content .year{
+    font-size: 1rem;
+    font-weight: 600;
+}
+.education-rows .education-box .education-content .content .year span{
+    margin-right: .8rem;
+}
+
+
+/* Skills */
+/* span{
+    color: slateblue;
+    font-weight: 700;
+} */
+.skills-section{
+    min-height: auto;
+    padding-bottom: 7rem;
+    background: rgba(105, 90, 205, 0.284);
+}
+.skills-heading {
+    padding-bottom: 2rem;
+    position: relative;
+}
+.skills-heading h1{
+    font-size: 4rem;
+    text-align: center;
+    font-weight: 600;
+    margin: 0;
+}
+.skills-section .skills-row{
+    display: flex;
+    gap: 5rem;
+}
+.skills-row .skills-column{
+    position: relative;
+    flex: 1 1 40rem;
+}
+.skills-box .skills-content{
+    position: relative;
+    border: .2rem solid slateblue;
+    border-radius: 1.3rem;
+    padding: 0.5rem 1.5rem;
+}
+.skills-content .skills-progress{
+    padding: 1rem 0;
+}
+.skills-content .skills-progress h3{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.7rem;
+}
+.skills-content .skills-progress .bar{
+    height: 2.5rem;
+    border: .2rem solid slateblue;
+    border-radius: .6rem;
+    padding: .5rem;
+    margin: 1rem 0;
+}
+.skills-content .skills-progress .bar span{
+    background-color: slateblue;
+    height: 100%;
+    display: block;
+    border-radius: .3rem;
+}
+.skills-column:nth-child(1) .skills-content .skills-progress:nth-child(1) .bar span{
+    width: 90%;
+}
+.skills-column:nth-child(1) .skills-content .skills-progress:nth-child(2) .bar span{
+    width: 70%;
+}
+.skills-column:nth-child(1) .skills-content .skills-progress:nth-child(3) .bar span{
+    width: 50%;
+}
+.skills-column:nth-child(2) .skills-content .skills-progress:nth-child(1) .bar span{
+    width: 80%;
+}
+.skills-column:nth-child(2) .skills-content .skills-progress:nth-child(2) .bar span{
+    width: 50%;
+}
+.skills-column:nth-child(2) .skills-content .skills-progress:nth-child(3) .bar span{
+    width: 60%;
+}
+
+
+/* Experience */
+.experience-section{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+.experience-heading{
+    position: relative;
+}
+.experience-heading h1{
+    font-size: 4rem;
+    text-align: center;
+    font-weight: 600;
+}
+.experience-heading h1 span{
+    color: slateblue;
+}
+.experience-rows .experience-box{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-left: 0.2rem solid slateblue;
+    padding-left: 2rem;
+}
+.experience-rows .experience-box .experience-content{
+    border: 0.1rem solid slateblue;
+    padding: 2%;
+    border-radius: 1.3rem;
+    position: relative;
+    display: flex;
+    cursor: pointer;
+}
+.experience-rows .experience-box .experience-content .overlay{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 1.3rem;
+    height: 100%;
+    width: 0;
+    opacity: 0.3;
+    background-color: slateblue;
+    transition: all .6s;
+    z-index: -1;
+}
+.experience-rows .experience-box .experience-content:hover .overlay{
+    width: 100%;
+    left: 0;
+    right: unset;
+}
+.experience-rows .experience-box .experience-content::before, .experience-rows .experience-box .experience-content::after{
+    position: absolute;
+    top: -0.1rem;
+    left: -3.2rem;
+    content: "";
+    height: 2rem;
+    width: 2rem;
+    background: slateblue;
+    border-radius: 50%;
+}
+.experience-rows .experience-box .experience-content::after{
+    box-shadow: 0 0 1.5rem slateblue;
+}
+.experience-rows .experience-box .experience-content .content .course{
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+}
+.experience-rows .experience-box .experience-content .content .company-name{
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: slateblue;
+}
+
+
+
+/* Projects */
+.project-section{
+    background: rgba(105, 90, 205, 0.284);
+}
+.project-heading{
+    position: relative;
+}
+.project-heading h1{
+    font-size: 4rem;
+    text-align: center;
+    font-weight: 600;
+    position: relative;
+}
+.project-heading h1 span{
+    color: slateblue;
+}
+.all-projects{
+    padding: 50px 0px;
+}
+.all-projects .project-row .project-col{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+}
+.all-projects .project-row .project-col .images{
+    height: 250px;
+}
+.all-projects .project-row .project-col .images img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+}
+.all-projects .project-row .project-col .project-1{
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+}
+.all-projects .project-row .project-col .project-1 .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 60%;
+    width: 100%;
+    background: rgba(105, 90, 205, 0.76);
+    z-index: 2;
+    opacity: 0;
+    transition: all 0.5s ease;
+    padding: 30px;
+}
+.all-projects .project-row .project-col .project-1 .overlay .heading{
+    font-size: 2rem;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}
+.all-projects .project-row .project-col .project-1 .overlay .heading h5{
+    font-size: 2rem;
+    font-weight: 600;
+}
+.all-projects .project-row .project-col .project-1 .overlay a{
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+}
+.all-projects .project-row .project-col .project-1:hover img{
+    transform: scale(1.1);
+}
+.all-projects .project-row .project-col .project-1:hover .overlay{
+    height: 100%;
+    opacity: 1;
+}
+.all-projects .project-row .project-col .project-2{
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+}
+.all-projects .project-row .project-col .project-2 .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 60%;
+    width: 100%;
+    background: rgba(105, 90, 205, 0.76);
+    z-index: 2;
+    opacity: 0;
+    transition: all 0.5s ease;
+    padding: 30px;
+}
+.all-projects .project-row .project-col .project-2 .overlay .heading{
+    font-size: 2rem;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}
+.all-projects .project-row .project-col .project-2 .overlay .heading h5{
+    font-size: 2rem;
+    font-weight: 600;
+}
+.all-projects .project-row .project-col .project-2 .overlay a{
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+}
+.all-projects .project-row .project-col .project-2:hover img{
+    transform: scale(1.1);
+}
+.all-projects .project-row .project-col .project-2:hover .overlay{
+    height: 100%;
+    opacity: 1;
+}
+
+/* Projects Carousel */
+.project-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      flex-direction: column;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .project-modal.active {
+      display: flex;
+    }
+
+    .project-modal h2 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      color: slateblue;
+      text-align: center;
+    }
+
+    .carousel {
+      position: relative;
+      width: 80%;
+      max-width: 700px;
+      height: 400px;
+      overflow: hidden;
+      border-radius: 20px;
+    }
+
+    .carousel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+
+    .carousel img.active {
+      display: block;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(105, 90, 205, 0.8);
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    .carousel-btn.prev {
+      left: 10px;
+    }
+
+    .carousel-btn.next {
+      right: 10px;
+    }
+
+    .project-modal a {
+      margin-top: 20px;
+      color: white;
+      background: slateblue;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .carousel {
+        width: 90%;
+        height: 300px;
+      }
+    }
+
+
+
+/* Contact */
+.contact-section{
+    margin-right: auto;
+    padding-bottom: 7rem;
+}
+.contact-heading{
+    position: relative;
+}
+.contact-heading h1{
+    font-size: 4rem;
+    text-align: center;
+    font-weight: 600;
+}
+.contact-heading h1 span{
+    color: slateblue;
+}
+.contact-section .form-input form{
+    max-width: 70rem;
+    margin: 0 auto;
+    text-align: center;
+}
+.form-input form .input-box{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.form-input form .input-box .input-field{
+    position: relative;
+    width: 48%;
+    margin: .8rem 0;
+}
+.form-input form .input-box .input-field input, .form-input form .textarea-field textarea{
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: .6rem;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    border: .1rem solid slateblue;
+}
+.form-input form .input-box .input-field input::placeholder, .form-input form .textarea-field textarea::placeholder{
+    color: white;
+}
+.form-input form .textarea-field{
+    position: relative;
+    display: flex;
+    margin: .8rem 0 2.7rem;
+}
+.form-input form .textarea-field textarea{
+    resize: none;
+}
+.form-input form .submit-button{
+    position: relative;
+}
+.form-input form .submit-button button{
+    padding: 0.6rem 1.8rem;
+    border-radius: 30px;
+    border: 0px;
+    background: slateblue;
+    box-shadow: 0px 0px 10px slateblue;
+    color: white;
+    font-size: 1.06rem;
+    font-weight: 600;
+    transition: all 0.5s ease;
+    position: relative;
+}
+.form-input form .submit-button button:hover{
+    background: transparent;
+    color: white;
+}

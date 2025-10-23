@@ -6,20 +6,24 @@ window.onscroll = () => {
     let top = window.scrollY;
 
     sections.forEach(sec => {
-        let offset = sec.offsetTop - 550;
+        // Different offsets for navbar and animation
+        let navOffset = sec.offsetTop - 100;   // for navbar highlight
+        let animOffset = sec.offsetTop - 550;  // for section animation
         let height = sec.offsetHeight;
         let id = sec.getAttribute('id');
 
-        // highlight nav link
-        if (top >= offset && top < offset + height) {
+        // Highlight nav link
+        if (top >= navOffset && top < navOffset + height) {
             navLinks.forEach(link => {
                 link.classList.remove('active');
                 document
                     .querySelector('.navbar-section .navbar .navbar-items .nav-list .nav-items a[href*=' + id + ']')
                     .classList.add('active');
             });
+        }
 
-            // Add class for animation
+        // Section scroll animation
+        if (top >= animOffset && top < animOffset + height) {
             sec.classList.add('show-animate');
         } 
         // else {
@@ -30,9 +34,11 @@ window.onscroll = () => {
     // Sticky navbar
     let header = document.querySelector(".navbar-section");
     header.classList.toggle('sticky', window.scrollY > 100);
+
     menuIcon.classList.remove('bx-x');
     navbar.classList.remove('active');
 };
+
 
 
 // Projects Carousel
